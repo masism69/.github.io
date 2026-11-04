@@ -603,7 +603,7 @@ body.motion-off .ticker-track{transform:none}
 
 <script>
 (async () => { try {
-  const t = await (await fetch('https://cdn.statically.io/gh/masism69/.github.io@main/showamura/assets-b64/video00.mp4.b64')).text();
+  const t = await (await fetch('https://cdn.jsdelivr.net/gh/masism69/.github.io@main/showamura/assets-b64/video00.mp4.b64')).text();
   const bin = atob(t.replace(/\s+/g, ''));
   const bytes = new Uint8Array(bin.length);
   for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
