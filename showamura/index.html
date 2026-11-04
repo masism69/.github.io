@@ -603,6 +603,7 @@ body.motion-off .ticker-track{transform:none}
 
 <script>
 (async () => {
+  const BASE = 'https://cdn.statically.io/gh/masism69/.github.io@main/showamura/';
   const dec = async (u, mime) => {
     const t = await (await fetch(u)).text();
     const bin = atob(t.replace(/\s+/g, ''));
@@ -611,20 +612,20 @@ body.motion-off .ticker-track{transform:none}
     return URL.createObjectURL(new Blob([bytes], {type: mime}));
   };
   try {
-    const fb = await dec('assets-b64/subset-B.woff2.b64', 'font/woff2');
+    const fb = await dec(BASE + 'assets-b64/subset-B.woff2.b64', 'font/woff2');
     document.fonts.add(new FontFace('Kaisei Decol', `url(${fb})`, {weight: '700'}));
-    const fm = await dec('assets-b64/subset-M.woff2.b64', 'font/woff2');
+    const fm = await dec(BASE + 'assets-b64/subset-M.woff2.b64', 'font/woff2');
     document.fonts.add(new FontFace('Kaisei Decol', `url(${fm})`, {weight: '500'}));
   } catch (e) {}
   const root = document.documentElement.style;
-  try { root.setProperty('--framebg', `url(${await dec('assets-b64/marquee-frame.jpg.b64', 'image/jpeg')})`); } catch (e) {}
-  try { root.setProperty('--boardbg', `url(${await dec('assets-b64/tex-board.jpg.b64', 'image/jpeg')})`); } catch (e) {}
-  try { root.setProperty('--smokebg', `url(${await dec('assets-b64/tex-smoke.jpg.b64', 'image/jpeg')})`); } catch (e) {}
+  try { root.setProperty('--framebg', `url(${await dec(BASE + 'assets-b64/marquee-frame.jpg.b64', 'image/jpeg')})`); } catch (e) {}
+  try { root.setProperty('--boardbg', `url(${await dec(BASE + 'assets-b64/tex-board.jpg.b64', 'image/jpeg')})`); } catch (e) {}
+  try { root.setProperty('--smokebg', `url(${await dec(BASE + 'assets-b64/tex-smoke.jpg.b64', 'image/jpeg')})`); } catch (e) {}
   for (const el of document.querySelectorAll('[data-poster-b64]')) {
-    try { el.poster = await dec(el.dataset.posterB64, 'image/jpeg'); } catch (e) {}
+    try { el.poster = await dec(BASE + el.dataset.posterB64, 'image/jpeg'); } catch (e) {}
   }
   for (const el of document.querySelectorAll('[data-b64]')) {
-    try { el.src = await dec(el.dataset.b64, el.dataset.mime || 'image/jpeg'); } catch (e) {}
+    try { el.src = await dec(BASE + el.dataset.b64, el.dataset.mime || 'image/jpeg'); } catch (e) {}
   }
 })();
 </script>
