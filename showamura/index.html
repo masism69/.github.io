@@ -353,7 +353,7 @@ body.motion-off .ticker-track{transform:none}
     </div>
     <div class="cinema">
       <video data-site-video controls playsinline preload="metadata" poster="https://lh3.googleusercontent.com/d/1bl5kwr_x4cJve2IFXhA1odj7XBJ7Odbr" aria-label="店内ムービー">
-        <source src="" type="video/mp4">
+        
       </video>
     </div>
   </section>
@@ -608,7 +608,7 @@ body.motion-off .ticker-track{transform:none}
   const bytes = new Uint8Array(bin.length);
   for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
   const v = document.querySelector('video');
-  if (v) v.src = URL.createObjectURL(new Blob([bytes], {type: 'video/mp4'}));
+  if (v) { v.src = URL.createObjectURL(new Blob([bytes], {type: 'video/mp4'})); v.load(); }
 } catch (e) {} })();
 </script>
 </body>
