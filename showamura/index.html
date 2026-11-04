@@ -604,10 +604,10 @@ body.motion-off .ticker-track{transform:none}
 
 <script>
 (async () => { try {
-  const base = 'https://cdn.jsdelivr.net/gh/masism69/.github.io@main/showamura/assets-b64/video01.mp4.b64.';
+  const base = 'https://cdn.jsdelivr.net/gh/masism69/.github.io@8cb8da85dbb29c29e83a5c86096a2e988170aa97/showamura/assets-b64/video01.mp4.b64.';
   const parts = await Promise.all([1,2,3,4,5].map(async n => (await (await fetch(base + 'p' + n)).text()));
   const t = parts.join('');
-  const bin = atob(t.replace(/\s+/g, ''));
+  const bin = atob(t.replace(/[^A-Za-z0-9+/=]/g, ''));
   const bytes = new Uint8Array(bin.length);
   for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
   const v = document.querySelector('video');
