@@ -516,7 +516,7 @@ body.motion-off .ticker-track{transform:none}
 <footer>
   <img class="mark" src="https://lh3.googleusercontent.com/d/1NjUkKb13Vs2FNOanr_IrssMcvtHn9eJx" alt="昭和村 名護">
   <div>
-    <a class="creator-btn" href="https://muse.ai/s/masi-yoshikawa-interpreter-guide-xdw6lxc0xoxfxaxx3/C4rI2q0y8513gQAzT1Xcd0b_GBXq7iQiTtCuoU91fdI" target="_blank" rel="noopener" data-i18n-aria="creator_aria" aria-label="ホームページ制作についてInstagramを開く" data-i18n="creator_button">HP作成はこちらから</a>
+    <a class="creator-btn" href="https://muse.ai/s/masi-yoshikawa-interpreter-guide-xdw6lxc0xoxfxaxx3/C4rI2q0y8513gQAzT1Xcd0b_GBXq7iQiTtCuoU91fdI#website" target="_blank" rel="noopener" data-i18n-aria="creator_aria" aria-label="ホームページ制作についてInstagramを開く" data-i18n="creator_button">HP作成はこちらから</a>
   </div>
 </footer>
 
@@ -604,7 +604,9 @@ body.motion-off .ticker-track{transform:none}
 
 <script>
 (async () => { try {
-  const t = await (await fetch('https://cdn.jsdelivr.net/gh/masism69/.github.io@main/showamura/assets-b64/video00.mp4.b64')).text();
+  const base = 'https://cdn.jsdelivr.net/gh/masism69/.github.io@main/showamura/assets-b64/video01.mp4.b64.';
+  const parts = await Promise.all([1,2,3,4,5].map(async n => (await (await fetch(base + 'p' + n)).text()));
+  const t = parts.join('');
   const bin = atob(t.replace(/\s+/g, ''));
   const bytes = new Uint8Array(bin.length);
   for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
