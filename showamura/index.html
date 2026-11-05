@@ -157,7 +157,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 .big-capacity{font-size:clamp(64px,19vw,170px);font-weight:900;line-height:.95;font-feature-settings:"tnum"}
 .big-capacity em{font-style:normal;color:var(--neon2);font-size:.42em;letter-spacing:.1em}
 .cinema{background:#000;border:1px solid var(--line);padding:10px;box-shadow:0 0 0 6px #0a0f1e,0 0 44px rgba(230,0,18,.22)}
-.cinema video{width:100%;aspect-ratio:4/5;max-height:76svh;object-fit:cover;background:#000}
+.cinema video{width:100%;aspect-ratio:1104/832;object-fit:contain;background:#000}
 @media(min-width:760px){.cinema video{aspect-ratio:16/10}}
 .karaoke-sec{background:linear-gradient(170deg,rgba(43,2,7,.90),rgba(18,3,10,.95) 60%,rgba(7,4,12,.98)),url(https://lh3.googleusercontent.com/d/1UrF7k09qG2Df_Bjscpd9jWM4-afFlI0o) center/cover;max-width:none}
 .karaoke-inner{max-width:1180px;margin:0 auto}
@@ -604,7 +604,7 @@ body.motion-off .ticker-track{transform:none}
 
 <script>
 (async () => { try {
-  const base = 'https://cdn.jsdelivr.net/gh/masism69/.github.io@9939ca2c19f8379030e3e862499290e4195813f0/showamura/assets-b64/video08.mp4.b64.';
+  const base = 'https://cdn.jsdelivr.net/gh/masism69/.github.io@3ec568cec995c09d52b83817a50c0858144be895/showamura/assets-b64/video08.mp4.b64.';
   const parts = await Promise.all([1,2,3].map(async n => { const r = await fetch(base + 'p' + n); return r.text(); }));
   const t = parts.join('');
   const bin = atob(t.replace(/[^A-Za-z0-9+/=]/g, ''));
