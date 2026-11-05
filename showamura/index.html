@@ -604,7 +604,7 @@ body.motion-off .ticker-track{transform:none}
 
 <script>
 (async () => { try {
-  const base = 'https://cdn.jsdelivr.net/gh/masism69/.github.io@301d6031d100128ef14faac552a6018837f85b3c/showamura/assets-b64/video08.mp4.b64.';
+  const base = 'https://cdn.jsdelivr.net/gh/masism69/.github.io@9939ca2c19f8379030e3e862499290e4195813f0/showamura/assets-b64/video08.mp4.b64.';
   const parts = await Promise.all([1,2,3].map(async n => { const r = await fetch(base + 'p' + n); return r.text(); }));
   const t = parts.join('');
   const bin = atob(t.replace(/[^A-Za-z0-9+/=]/g, ''));
